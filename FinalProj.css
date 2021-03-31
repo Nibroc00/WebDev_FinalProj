@@ -36,39 +36,16 @@ body {
     height:100vh;
     margin: none;
     padding-top:20vh;
+    padding-bottom: 20vh;
     box-sizing: border-box;
     transform-style: preserve-3d;
     
 }
 
-
-/* body {
+#parallax-wrapper1::before {
     content:"";
     width: 100vw;
-    background-image: url("Protruding-Squares.svg");
-    background-repeat: repeat;
-    position: absolute;
-    transform:translateZ(-1px) scale(2);
-    z-index: -1;
-} */
-
-body::before {
-    content:"";
-    width: 100vw;
-    height: calc(100vh + 84vw + );
-    background-image: url("Protruding-Squares.svg");
-    background-repeat: repeat;
-    position: absolute;
-    transform:translateZ(-1px) scale(2);
-    z-index: -1;
-    overflow: hidden;  
-}
-
-
-/* #parallax-wrapper1::before {
-    content:"";
-    width: 100vw;
-    height: calc(65vw + 280vh);
+    height: 100vh;
     top:0;
     left:0;
     background-image: url("Protruding-Squares.svg");
@@ -77,12 +54,12 @@ body::before {
     transform:translateZ(-1px) scale(2);
     z-index: -1;
     overflow: hidden;  
-} */
+}
 
-/* #parallax-wrapper2::before {
+#parallax-wrapper2::before {
     content:"";
     width: 100vw;
-    height: calc(65vw + 200vh);
+    height: 100vh;
     top: 0;
     left:0;
     background-image: url("Protruding-Squares.svg");
@@ -90,21 +67,20 @@ body::before {
     position: absolute;
     transform:translateZ(-1px) scale(2);
     z-index: -2;
+}
 
-} */
-
-/* #parallax-wrapper3::after {
+#parallax-wrapper3::before {
     content:"";
     width: 100vw;
     height: 100vh;
-    top: 20vw;
+    top: 0;
     left:0;
     background-image: url("Protruding-Squares.svg");
-
+    background-repeat: repeat;
     position: absolute;
     transform:translateZ(-1px) scale(2);
     z-index: -3;
-} */
+}
 
 .parallax-content {
     margin: 0 auto;
@@ -115,48 +91,33 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
     border: solid 15px black;
-    /* background-color:rgba(red,0.75);
-    background-position: center;
-    transition: 1s ease all;
-    background-blend-mode:multiply;    */
-    /* align-content: center; */
-}
-
-
-
-#parallax-wrapper2 {
-    height: auto;
-    padding: 0;
-}
-
-#parallax-wrapper3 {
-    height: auto;
-    padding: 0;
 }
     
 #p-content2 {
-    font-size: calc( (25vw) / 16 );
+    font-size: calc(55vh * 0.03);
     font-family: "Times New Roman", Times, serif;
     color: white;
     background-image: url("Rainbow-Vortex.svg");
-    margin: 10vw auto;
+    margin: auto auto;
+    /* margin-top: 20vh;
+    margin-bottom: 20vh; */
     padding: .5em;
-    width: 65vw;
-    height: auto;
+    width: 70vw;
+    height: 55vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2em 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas: 
     "header header"
     "skill1 skill2"
-    "skill1 skill2"
+    "skill3 skill4"
     ;
     justify-items: center;
 }
     
 #p-content2 h2 {
-    grid-area: header;
     width: 95%;
+    font-size: calc(55vh * .07);
     border-bottom: 3px solid black;
     text-align: center;
     align-self: flex-end;
@@ -188,7 +149,7 @@ body::before {
     flex-direction: row;
     width: 100vw;
     min-height: 100vh;
-    height: 84vw;
+    height: 100vh;
     background-image: url("Subtle-Prism.svg");
     /* background-image: none; */
 }
@@ -196,8 +157,8 @@ body::before {
 #regular-wrapper2 {
     font-size: calc( (60vw) / 16 );
     width: 100vw;
-    min-height: initial;
-    height: auto;
+    /* min-height: initial; */
+    height: 100vh;
     background-image: url("Subtle-Prism.svg");
     display: grid;
     grid-template-columns: 2fr 6fr;
@@ -240,12 +201,9 @@ body::before {
     grid-template-rows: 5vw 30vw;
     grid-template-areas: 
     "header header"
-    "profile about"
-    ;
+    "profile about";
     align-items: center;
     padding: 0;
-    /* padding-right: 1em; */
-    /* background-image: none; */
 }
 
 #regular-wrapper3 img {
@@ -255,32 +213,6 @@ body::before {
     
 }
 
-
-/* Regular Content */
-
-
-/* .regular-content {
-    width: 65vw;
-    height: 40vh;
-    background-image: url("Varying-Stripes.svg");
-    background-size: cover;
-} */
-
-/* #r-content1 {
-    
-}
-
-#r-content2 {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: inherit;
-    height: inherit;
-    background-color: blue;
-} */
-
 .work-wrapper {
     background-size: contain;
     background-repeat: initial;
@@ -289,8 +221,8 @@ body::before {
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 3%;
-    width: 30vw;
-    height: 30vw;
+    width: 30vh;
+    height: 30vh;
     background-position: 30% 50%;
     display: flex;
 }  
@@ -298,32 +230,49 @@ body::before {
 .work {
     background-size: cover;
     background-repeat: no-repeat;
-    /* margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%; */
-    padding: 20px;
+    padding: 3%;
     border-radius: 3%;
     width: 100%;
     background-position: 30% 50%;
 }  
 
+.work span {
+    font-family: "Times New Roman", Times, serif;
+    /* font-size: 28pt; */
+    font-size: calc(30vh * .12);
+    color: black;
+    transition: 1s ease none;
+    transition-property: color;
+}
+
 .work p, .work ul {
     opacity: 0;
     transition: 1s;
-    font-size: 80%;
+    /* font-size: 80%; */
+    font-size: calc(30vh * .07);
+    color: black;
 }
 
 .work ul, .work li {
     opacity: 0;
     transition: 1s;
-    font-size: 100%;
+    /* font-size: 100%; */
+    font-size: calc(30vh * .07);
+    color: black;
 }
 
-.work span {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 30pt;
-    color: black;
+.work:hover span {
+    color: white;
+}
+
+.work:hover p, .work:hover ul {
+    opacity: 1;
+    color: white;
+}
+
+.work:hover ul, .work:hover li {
+    opacity: 1;
+    color: white;
 }
 
 #lawn {
@@ -339,14 +288,6 @@ body::before {
     background-position: 3%;
     background-image: url('string trimmer.jpg');
 
-}
-
-.work:hover p, .work:hover ul {
-    opacity: 1;
-}
-
-.work:hover ul, .work:hover li {
-    opacity: 1;
 }
 
 #assistant {
@@ -507,8 +448,103 @@ header {
 
 /* ----------Media Querries-------------------------------------------------------------------------------------------------------------------- */
 
+@media screen and (max-width: 980px) and (min-height: 1170px) {
+    .work-wrapper {
+        width: 35vw;
+        height: 35vw;
+    }
+}
 
-@media screen and (min-width: 1600px) {
+@media screen and (max-width: 725px) {
+    
+    .work-wrapper {
+        width: 80vw;
+        height: 18vh;
+        margin-top: 5vh;
+        margin-bottom: 0vh;
+    }
+
+    .work {
+        padding: 5px;
+        padding-left: 10px;
+    } 
+
+    .work span {
+        font-size: 17pt;
+    }
+
+    .work p {
+        font-size: 9pt;
+        float: left;
+    }
+
+    .work ul {
+        font-size: 9pt;
+        float: left;
+    }
+    
+    .work ul, .work li {
+        font-size: 9pt;
+    }
+
+    .work:active span {
+        color: white;
+    }
+    
+    .work:active p, .work:active ul {
+        opacity: 1;
+        color: white;
+    }
+    
+    .work:active ul, .work:active li {
+        opacity: 1;
+        color: white;
+    }
+    
+    #lawn {
+        background-image: url('string trimmer.jpg');
+        background-repeat:no-repeat;
+        background-position: center;
+        transition: 1s ease all;
+        background-blend-mode:multiply; 
+    }
+    
+    #lawn:active {
+        background-color: rgba(56, 47, 47, 0.596);
+        background-position: 3%;
+        background-image: url('string trimmer.jpg');
+    
+    }
+    
+    #assistant:active {
+        background-color: rgba(56, 47, 47, 0.596);
+        background-position: 0%;
+        background-image: url('chopping\ wood.jpg');
+    }
+    
+    #arbys:active {
+        background-color: rgba(56, 47, 47, 0.596);
+        background-position: 4%;
+        background-image: url('arbys.jpg');
+    
+    }
+
+    #AWC:active {
+        background-color: rgba(56, 47, 47, 0.596);
+        background-position: 0%;
+        background-image: url('woodworking.jpg');
+    
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #p-content2 {
+        font-size: calc(55vw * 0.05);
+    }
+}
+
+
+/* @media screen and (min-width: 1600px) {
     #regular-wrapper1 {
         width: 100vw;
         height: 55vw;
@@ -533,21 +569,18 @@ header {
     .work {
         background-size: cover;
         background-repeat: no-repeat;
-        /* margin-left: 5%;
+        margin-left: 5%;
         margin-right: 5%;
         margin-top: 5%;
-        margin-bottom: 5%; */
+        margin-bottom: 5%;
         padding: 20px;
         border-radius: 3%;
         width: 100%;
         background-position: 30% 50%;
-        
-    }  
-
-    
+    }    
 
 
-}
+} */
  
 /* @media screen and (max-width: 549px) {
     header a {
