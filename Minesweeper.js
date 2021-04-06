@@ -10,7 +10,6 @@ class minesweeper {
 
     getMineNum(i, j) {
         let counter = 0;
-        console.log(i + " " + j);
         if (this.cells[j][i].mine == true) {
             return "bomb";
         }
@@ -73,7 +72,7 @@ class minesweeper {
             this.cells[i] = [];
             for (let j = 0; j < this.x; j++) {
                 let num = Math.random();
-                if (num >= .33333) {
+                if (num >= .22) {
                     this.cells[i][j] = new cell(false);
                 }
                 else {
@@ -113,6 +112,91 @@ class minesweeper {
         }
         parent.insertBefore(div, null);
     }
+    tileRecursion(y, x) {
+        let temp = document.querySelector(`[x="${x}"][y="${y}"]`)
+        let num; 
+        if (game.cells[y][x].revealed == false) {
+            num = game.getMineNum(x, y);
+            game.cells[y][x].revealed = true;
+        }
+        switch(num) {
+            case 0:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile_empty.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+                
+                if (x > 0) {
+                    if (y > 0) {
+                        //top left
+                        this.tileRecursion(y - 1, x - 1);  
+                    }
+                    //middle left
+                    this.tileRecursion(y, x - 1);
+                    if (y < this.y - 1) {
+                        //bottom left
+                        this.tileRecursion(y + 1, x - 1);
+                    }
+                }
+        
+                if (x < this.x - 1) {
+                    if (y > 0) {
+                        //top right
+                        this.tileRecursion(y, x + 1);
+                    }
+                    //middle right
+                    this.tileRecursion(y, x + 1);
+                    if (y < this.y - 1) {
+                        //bottom right
+                        this.tileRecursion(y + 1, x + 1);
+                    }
+                }
+                
+                if (y > 0) {
+                    //top middle
+                    this.tileRecursion(y - 1, x);
+                }
+                if (y < this.y - 1) {
+                    //bottom middle
+                    this.tileRecursion(y + 1, x);  
+                }
+                break;
+            case 1:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile1.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 2:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile2.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 3:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile3.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 4:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile4.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 5:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile5.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 6:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile6.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 7:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile7.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case 8:
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile8.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            case "bomb":
+                temp.setAttribute("style", `background-image: url("Minesweeper_tile_mine.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${y + 2}; grid-row-end: ${y + 3}; grid-column-start: ${x + 0}; grid-column-start: ${x + 1};`);
+    
+                break;
+            
+        }
+    }
 
 
 
@@ -123,7 +207,7 @@ class minesweeper {
 
 
 
-let game = new minesweeper(10,9);
+let game = new minesweeper(30,20);
 let selectedTileX = 0;
 let selectedTileY = 0;
 let onTileClick = function() {
@@ -135,11 +219,44 @@ let onTileClick = function() {
         num = game.getMineNum(selectedTileX, selectedTileY);
         game.cells[selectedTileY][selectedTileX].revealed = true;
     }
-    console.log(num);
     switch(num) {
         case 0:
             temp.setAttribute("style", `background-image: url("Minesweeper_tile_empty.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${selectedTileY + 2}; grid-row-end: ${selectedTileY + 3}; grid-column-start: ${selectedTileX + 0}; grid-column-start: ${selectedTileX + 1};`);
             
+            if (selectedTileX > 0) {
+                if (selectedTileY > 0) {
+                    //top left
+                    game.tileRecursion(selectedTileY - 1, selectedTileX - 1);  
+                }
+                //middle left
+                game.tileRecursion(selectedTileY, selectedTileX - 1);
+                if (selectedTileY < game.y - 1) {
+                    //bottom left
+                    game.tileRecursion(selectedTileY + 1, selectedTileX - 1);
+                }
+            }
+    
+            if (selectedTileX < game.x - 1) {
+                if (selectedTileY > 0) {
+                    //top right
+                    game.tileRecursion(selectedTileY, selectedTileX + 1);
+                }
+                //middle right
+                game.tileRecursion(selectedTileY, selectedTileX + 1);
+                if (selectedTileY < game.y - 1) {
+                    //bottom right
+                    game.tileRecursion(selectedTileY + 1, selectedTileX + 1);
+                }
+            }
+            
+            if (selectedTileY > 0) {
+                //top middle
+                game.tileRecursion(selectedTileY - 1, selectedTileX);
+            }
+            if (selectedTileY < game.y - 1) {
+                //bottom middle
+                game.tileRecursion(selectedTileY + 1, selectedTileX);  
+            }
             break;
         case 1:
             temp.setAttribute("style", `background-image: url("Minesweeper_tile1.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${selectedTileY + 2}; grid-row-end: ${selectedTileY + 3}; grid-column-start: ${selectedTileX + 0}; grid-column-start: ${selectedTileX + 1};`);
