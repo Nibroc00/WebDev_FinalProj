@@ -139,7 +139,7 @@ class minesweeper {
                 if (x < this.x - 1) {
                     if (y > 0) {
                         //top right
-                        this.tileRecursion(y, x + 1);
+                        this.tileRecursion(y - 1, x + 1);
                     }
                     //middle right
                     this.tileRecursion(y, x + 1);
@@ -239,7 +239,7 @@ let onTileClick = function() {
             if (selectedTileX < game.x - 1) {
                 if (selectedTileY > 0) {
                     //top right
-                    game.tileRecursion(selectedTileY, selectedTileX + 1);
+                    game.tileRecursion(selectedTileY - 1, selectedTileX + 1);
                 }
                 //middle right
                 game.tileRecursion(selectedTileY, selectedTileX + 1);
