@@ -129,14 +129,9 @@ body {
 
 
 .regular-wrapper {
-    width: 100vw;
-    min-height: 100vh;
-    height: 84vw;
-    background-image: url("Subtle-Prism.svg");
-    
+    background-image: url("Subtle-Prism.svg");  
     z-index: 2;
     position: relative;
-    background-image: none;
     justify-content: center;
     align-content: center;
     width: 100vw;
@@ -148,7 +143,6 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     width: 100vw;
-    min-height: 100vh;
     height: 100vh;
     background-image: url("Subtle-Prism.svg");
     /* background-image: none; */
