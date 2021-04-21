@@ -15,19 +15,6 @@ body {
     overflow-y:scroll;
 }
 
-/* .parallax-wrapper::before {
-    content:"";
-    width: 100vw;
-    height: 100vh;
-    top:0;
-    left:0;
-    background-image: url("Protruding-Squares.svg");
-    background-size: initial;
-    position: absolute;
-    transform:translateZ(-1px) scale(2);
-    z-index: -1;
-} */
-
 
 /* ----------Parallax-------------------------------------------------------------------------------------------------------------------- */
 
@@ -92,6 +79,12 @@ body {
     background-repeat: no-repeat;
     border: solid 15px black;
 }
+
+#p-content1 {
+    color: black;
+    padding: 5%;
+    font-size: calc(45vh * 0.1);
+}
     
 #p-content2 {
     font-size: calc(55vh * 0.03);
@@ -99,8 +92,6 @@ body {
     color: white;
     background-image: url("Rainbow-Vortex.svg");
     margin: auto auto;
-    /* margin-top: 20vh;
-    margin-bottom: 20vh; */
     padding: .5em;
     width: 70vw;
     height: 55vh;
@@ -114,7 +105,7 @@ body {
     ;
     justify-items: center;
 }
-    
+
 #p-content2 h2 {
     width: 95%;
     font-size: calc(55vh * .07);
@@ -122,6 +113,11 @@ body {
     text-align: center;
     align-self: flex-end;
     margin: 0 0 0 0;
+}
+
+#p-content3 {
+    color: black;
+    font-size: calc(55vh * .07);
 }
 
 
@@ -331,7 +327,20 @@ body {
 
 }
 
+#minesweeper h2 {
+    border-bottom: 3px solid white;
+    width: 95%;
+}
 
+#minesweeper {
+    padding: 30px 30px 30px 30px;
+}
+
+.minesweeper_header button {
+    align-self: center;
+    justify-self: center;
+}
+    
 
 /* ----------Header-------------------------------------------------------------------------------------------------------------------- */
 
@@ -342,7 +351,7 @@ body {
     padding-bottom: 4px;
     padding-top: 0;
     position: relative;
-    background: linear-gradient(to left, #40e276, #40e276 0%, #33ceb4 100%, #33ceb4);
+    background: linear-gradient(to left, #dadada, #dadada 0%, #000000 100%, #000000 );
     z-index: 3;
     
 }
@@ -350,7 +359,7 @@ body {
 header {
     height: 98px;
     width: 100%;
-    background-color: #a09b9b;
+    background-color: #575757;
     padding: none;
     z-index: 4;
     
@@ -419,8 +428,10 @@ header {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background-image: linear-gradient(to left, #40e276, #40e276 0%, #33ceb4 100%, #33ceb4);
+      background-image: linear-gradient(to left, #bbbbbb, #bbbbbb 0%, #000000 90%, #000000 );
       padding: 4px;
+      margin-top: 5px;
+      margin-left: 10px;
   }
   
   .vertical-center {
@@ -537,110 +548,3 @@ header {
     }
 }
 
-
-/* @media screen and (min-width: 1600px) {
-    #regular-wrapper1 {
-        width: 100vw;
-        height: 55vw;
-        min-height: initial;
-        z-index: 2;
-        position: relative;
-        border: solid red 4px;
-        justify-content: space-between;
-    }
-    
-    .work-wrapper {
-        background-color: #d33937;
-        border-radius: 4%;
-        width: 15vw;
-        height: 15vw;
-        background-position: 30% 50%;
-        display: flex;
-        border: solid red 4px;
-        align-self: flex-end;
-    }  
-    
-    .work {
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        padding: 20px;
-        border-radius: 3%;
-        width: 100%;
-        background-position: 30% 50%;
-    }    
-
-
-} */
- 
-/* @media screen and (max-width: 549px) {
-    header a {
-      float: none;
-      text-align: left;
-      padding: 0px;
-      display: block;
-    }
-  
-    header a.address {
-      color: black;
-    }
-  
-    header {
-      overflow: hidden;
-      height: 100%;
-      background: linear-gradient(to top, #ffa552, #ffa552 100px, #dfdfdf 100px, #dfdfdf);
-      padding: 9px 10px;
-      position: static;
-    }
-  
-    .header-center{
-      float: left;
-      height: 80px;
-      position: relative;
-      padding: 10px;
-      width: 160px;
-    }
-  
-    .header-center p {
-      float: none;
-      text-align: left;
-      padding: 1px 0px;
-    }
-  
-    header img {
-      float: left;
-      text-align: left;
-      border-radius: 50%;
-      background-color: rgb(187, 187, 187);
-      padding: 4px;
-    }
-    
-    .header-right {
-      display: block;
-      float: none;
-      padding-top: 37px;
-      padding-bottom: 1px;
-    }
-  
-    .hidden-br-title {
-      display: initial !important;
-    }
-  
-    .hidden-br-header {
-      display: initial !important;
-    }
-  
-  } */
-  
-
-/* 
-#e03532
-#362927 
-
-#242424
-#555555
-#CCCCCC
-*/
