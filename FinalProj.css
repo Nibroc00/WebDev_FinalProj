@@ -5,7 +5,7 @@ html {
 body {
     margin: 0 0 0 0;
     font-size: 26px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     color: rgb(247, 243, 235);
     height: 100vh;
     width: 100vw;
@@ -73,7 +73,7 @@ body {
     margin: 0 auto;
     padding: .5em;
     width: 65vw;
-    height: 40vh;
+    height: auto;
     background-image: url("Varying-Stripes.svg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,18 +83,18 @@ body {
 #p-content1 {
     color: black;
     padding: 5%;
-    font-size: calc(45vh * 0.1);
+    font-size: calc(38vh * 0.09);
+    
 }
     
 #p-content2 {
-    font-size: calc(55vh * 0.03);
-    font-family: "Times New Roman", Times, serif;
+    font-size: calc(55vh * 0.04);
+    
     color: white;
     background-image: url("Rainbow-Vortex.svg");
-    margin: auto auto;
+    /* margin: auto auto; */
     padding: .5em;
     width: 70vw;
-    height: 55vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr 1fr;
@@ -109,6 +109,7 @@ body {
 #p-content2 h2 {
     width: 95%;
     font-size: calc(55vh * .07);
+    
     border-bottom: 3px solid black;
     text-align: center;
     align-self: flex-end;
@@ -117,7 +118,8 @@ body {
 
 #p-content3 {
     color: black;
-    font-size: calc(55vh * .07);
+    font-size: calc(40vh * .09);
+    
 }
 
 
@@ -145,14 +147,14 @@ body {
 }
 
 #regular-wrapper2 {
-    font-size: calc( (60vw) / 16 );
+    font-size: calc(45vh * 0.15);
+    
     width: 100vw;
-    /* min-height: initial; */
     height: 100vh;
     background-image: url("Subtle-Prism.svg");
     display: grid;
     grid-template-columns: 2fr 6fr;
-    grid-template-rows: 5vw 30vw 30vw;
+    grid-template-rows: 10vh 45vh 45vh;
     grid-template-areas: 
     "header header"
     "logo1 edu1"
@@ -160,8 +162,6 @@ body {
     ;
     align-items: center;
     padding: 1em;
-    padding-bottom: 2.7em;
-    /* background-image: none; */
 }
 
 #regular-wrapper2 h2 {
@@ -170,8 +170,8 @@ body {
 }
 
 #regular-wrapper2 img {
-    height: auto;
-    width: 60%;
+    height: 30vh;
+    width: auto;
     justify-self: center;
     
 }
@@ -180,28 +180,6 @@ body {
     justify-self: center;
 }
 
-#regular-wrapper3 {
-    font-size: calc( (35vw) / 16 );
-    width: 100vw;
-    min-height: initial;
-    height: 50vh;
-    background-image: url("Subtle-Prism.svg");
-    display: grid;
-    grid-template-columns: calc(25vw - 1em) calc(75vw - 1em);
-    grid-template-rows: 5vw 30vw;
-    grid-template-areas: 
-    "header header"
-    "profile about";
-    align-items: center;
-    padding: 0;
-}
-
-#regular-wrapper3 img {
-    height: auto;
-    width: 100%;
-    justify-self: center;
-    
-}
 
 .work-wrapper {
     background-size: contain;
@@ -227,7 +205,7 @@ body {
 }  
 
 .work span {
-    font-family: "Times New Roman", Times, serif;
+    
     /* font-size: 28pt; */
     font-size: calc(30vh * .12);
     color: black;
@@ -334,6 +312,7 @@ body {
 
 #minesweeper {
     padding: 30px 30px 30px 30px;
+    
 }
 
 .minesweeper_header button {
