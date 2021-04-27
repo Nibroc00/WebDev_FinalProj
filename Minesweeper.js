@@ -211,7 +211,6 @@ class minesweeper {
                 box.setAttribute("style", `background-image: url("Minesweeper_tile_hidden.png"); padding: 0 0 0 0; margin: 0 0 0 0; height: 1fr; width: 1fr; grid-row-start: ${i + 2}; grid-row-end: ${i + 3}; grid-column-start: ${j + 0}; grid-column-start: ${j + 1};`);
                 box.setAttribute("class", `minesweeper_tile`);
                 div.insertBefore(box, null);
-                // this.cells[i][j] = new cell(false);
             }
         }
         parent.insertBefore(div, null);
@@ -318,13 +317,12 @@ let reset = function() {
     game = new minesweeper(width,height);
 }
 
-
-
 let width = 30;
 let height = 20;
 let game = new minesweeper(width,height);
 let selectedTileX = 0;
 let selectedTileY = 0;
+
 
 
 
