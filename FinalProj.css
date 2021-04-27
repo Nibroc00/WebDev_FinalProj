@@ -15,7 +15,14 @@ body {
     overflow-y:scroll;
 }
 
-
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+ }
 /* ----------Parallax-------------------------------------------------------------------------------------------------------------------- */
 
 .parallax-wrapper {
@@ -171,6 +178,7 @@ body {
 
 #regular-wrapper2 img {
     height: 30vh;
+    max-height: 4em;
     width: auto;
     justify-self: center;
     
@@ -305,17 +313,18 @@ body {
 
 }
 
-#minesweeper h2 {
+#javascript h2 {
     border-bottom: 3px solid white;
     width: 95%;
 }
 
-#minesweeper {
+#javascript {
     padding: 30px 30px 30px 30px;
-    
+    height: auto;
+    min-height: 100vh;
 }
 
-.minesweeper_header button {
+.javascript_header button {
     align-self: center;
     justify-self: center;
 }

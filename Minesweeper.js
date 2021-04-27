@@ -167,7 +167,7 @@ class minesweeper {
                 }
             }
         }
-        console.log(this.cells);
+        // console.log(this.cells);
     }
     
     constructor(width, heigth) {
@@ -308,31 +308,12 @@ class minesweeper {
         for (let i = 0; i < tiles.length; i++) {
             tiles[i].removeEventListener('click', onTileClick);
         }
-        // for (let i = 0; i < this.y; i++) {
-        //     for (let j = 0; j < this.x; j++) {
-        //         if (this.cells[i][j].mine == true) {
-        //              new cell(false);
-        //         }
-        //         else {
-        //             this.cells[i][j] = new cell(true);
-        //         }
-        //     }
-        // }
-        // console.log(this.cells);
     }
 
 }
 
 
 let reset = function() {
-    // console.log(this);
-    // game.removeHTML();
-    // game.create2DArray();
-    // game.addHTML();
-    // tiles = document.getElementsByClassName("minesweeper_tile");
-    // for (let i = 0; i < tiles.length; i++) {
-    //     tiles[i].addEventListener('click', onTileClick);
-    // }
     game.removeHTML();
     game = new minesweeper(width,height);
 }
